@@ -1,0 +1,147 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Instagram, Facebook, Linkedin, Mail, Phone } from "lucide-react";
+
+const footerLinks = {
+  product: [
+    { href: "/features", label: "Features" },
+    { href: "/security", label: "Security" },
+    { href: "/contact", label: "Contact" },
+  ],
+  legal: [
+    { href: "/terms", label: "Terms & Conditions" },
+    { href: "/privacy", label: "Privacy Policy" },
+  ],
+  social: [
+    { href: "https://instagram.com", label: "Instagram", icon: Instagram },
+    { href: "https://facebook.com", label: "Facebook", icon: Facebook },
+    { href: "https://linkedin.com", label: "LinkedIn", icon: Linkedin },
+  ],
+};
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-surface border-t border-border">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center group mb-4">
+              <Image
+                src="/logo.svg"
+                alt="Snapflow"
+                width={140}
+                height={40}
+                className="group-hover:scale-105 transition-transform"
+              />
+            </Link>
+            <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              Smart Photo Delivery & Studio Management for Modern Photography Businesses.
+            </p>
+            <div className="flex items-center gap-4">
+              {footerLinks.social.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-surface-light border border-border flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary transition-all"
+                  aria-label={link.label}
+                >
+                  <link.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Product Links */}
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4 font-[family-name:var(--font-syne)]">
+              Product
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4 font-[family-name:var(--font-syne)]">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4 font-[family-name:var(--font-syne)]">
+              Contact
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:hello@trizen-ai.com"
+                  className="text-text-secondary hover:text-text-primary transition-colors text-sm flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  hello@trizen-ai.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:talent@trizen-ai.com"
+                  className="text-text-secondary hover:text-text-primary transition-colors text-sm flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  talent@trizen-ai.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919003382337"
+                  className="text-text-secondary hover:text-text-primary transition-colors text-sm flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  +91 9003382337
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-text-muted text-sm">
+            © {currentYear} Snapflo. All rights reserved.
+          </p>
+          <p className="text-text-muted text-sm">
+            Built with ❤️ for photographers worldwide
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+

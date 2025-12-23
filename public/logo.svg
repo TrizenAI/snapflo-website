@@ -1,0 +1,56 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Background Box for Logo -->
+  <rect x="0" y="0" width="200" height="50" rx="8" fill="white"/>
+  
+  <!-- Camera Frame - Top Left Corner (Blue) -->
+  <path d="M10 8H20C20.5 8 21 8.5 21 9V11" stroke="#1E1B5E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 10V18" stroke="#1E1B5E" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Camera Frame - Top Right Corner (Blue) -->
+  <path d="M38 8H32" stroke="#1E1B5E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 10V15" stroke="#1E1B5E" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Camera Frame - Bottom Left Corner (Red) -->
+  <path d="M8 32V38C8 38.5 8.5 39 9 39H14" stroke="#E31837" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Camera Frame - Bottom Right Corner (Red) -->
+  <path d="M34 39H40C40.5 39 41 38.5 41 38V32" stroke="#E31837" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Flash/Viewfinder dot -->
+  <circle cx="34" cy="12" r="2" fill="#1E1B5E"/>
+  
+  <!-- Colorful Aperture/Lens - Simplified -->
+  <circle cx="24" cy="25" r="10" fill="none" stroke="url(#apertureGradient)" stroke-width="2"/>
+  <circle cx="24" cy="25" r="6" fill="none" stroke="url(#apertureGradient2)" stroke-width="3"/>
+  <circle cx="24" cy="25" r="2" fill="#1E1B5E"/>
+  
+  <!-- Aperture color segments -->
+  <path d="M24 15 L27 19 L24 19 Z" fill="#4CAF50"/>
+  <path d="M32 21 L29 25 L29 22 Z" fill="#00BCD4"/>
+  <path d="M30 31 L26 29 L28 27 Z" fill="#9C27B0"/>
+  <path d="M24 35 L21 31 L24 31 Z" fill="#E91E63"/>
+  <path d="M16 29 L19 25 L19 28 Z" fill="#FF9800"/>
+  <path d="M18 19 L22 21 L20 23 Z" fill="#FFEB3B"/>
+  
+  <!-- Text "Snap" in Red -->
+  <text x="48" y="32" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#E31837">Snap</text>
+  
+  <!-- Text "flow" in Blue -->
+  <text x="103" y="32" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#1E1B5E">flow</text>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="apertureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="25%" stop-color="#00BCD4"/>
+      <stop offset="50%" stop-color="#9C27B0"/>
+      <stop offset="75%" stop-color="#E91E63"/>
+      <stop offset="100%" stop-color="#FF9800"/>
+    </linearGradient>
+    <linearGradient id="apertureGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEB3B"/>
+      <stop offset="50%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#00BCD4"/>
+    </linearGradient>
+  </defs>
+</svg>
