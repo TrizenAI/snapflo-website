@@ -178,7 +178,7 @@ export default function PrivacyPage() {
             </p>
 
             <p className="text-text-muted text-sm mt-4">
-              Last updated: December 2024
+              Last updated: December 2025
             </p>
           </motion.div>
         </div>
