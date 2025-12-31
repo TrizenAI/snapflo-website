@@ -134,7 +134,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-sm">
-            © {currentYear} Snapflo. All rights reserved.
+            © {currentYear} Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED. All rights reserved.
           </p>
           <p className="text-text-muted text-sm">
             Built with ❤️ for photographers worldwide
