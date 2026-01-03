@@ -82,7 +82,7 @@ export default function Hero({ onGetStarted }: HeroProps) {
       {/* Navigation */}
       <nav className="relative z-20 container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          <img src="/snapflow-logo.png" alt="Snapflow" className="h-12 brightness-0 invert" />
+          <img src="/snapflo-logo.png" alt="Snapflow" className="h-12 brightness-0 invert" />
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-300 hover:text-white transition">Features</a>
             <a href="#analytics" className="text-gray-300 hover:text-white transition">Analytics</a>

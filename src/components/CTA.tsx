@@ -2,9 +2,10 @@ import { ArrowRight } from 'lucide-react';
 
 interface CTAProps {
   onGetStarted: () => void;
+  onScheduleDemo: () => void;
 }
 
-export default function CTA({ onGetStarted }: CTAProps) {
+export default function CTA({ onGetStarted, onScheduleDemo }: CTAProps) {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
@@ -26,7 +27,10 @@ export default function CTA({ onGetStarted }: CTAProps) {
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="bg-transparent text-white px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-lg border-2 border-white">
+              <button 
+                onClick={onScheduleDemo}
+                className="bg-transparent text-white px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-lg border-2 border-white"
+              >
                 Schedule Demo
               </button>
             </div>
