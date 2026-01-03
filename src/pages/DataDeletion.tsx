@@ -59,10 +59,10 @@ export default function DataDeletion() {
                 <div>
                   <p className="text-gray-800 font-medium">Send an email to</p>
                   <a 
-                    href="mailto:privacy@snapflo.studio" 
+                    href="mailto:hello@trizen-ai.com" 
                     className="text-blue-600 hover:text-blue-700 font-semibold text-lg"
                   >
-                    privacy@snapflo.studio
+                    hello@trizen-ai.com
                   </a>
                 </div>
               </div>
@@ -161,13 +161,13 @@ export default function DataDeletion() {
             
             <div className="grid sm:grid-cols-2 gap-4">
               <a 
-                href="mailto:privacy@snapflo.studio"
+                href="mailto:hello@trizen-ai.com"
                 className="flex items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition"
               >
                 <Mail className="w-5 h-5 text-blue-400" />
                 <div>
                   <p className="text-sm text-gray-400">Privacy Email</p>
-                  <p className="font-semibold">privacy@snapflo.studio</p>
+                  <p className="font-semibold">hello@trizen-ai.com</p>
                 </div>
               </a>
               
