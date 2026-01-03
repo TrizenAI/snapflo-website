@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">Data Protection Officer Email</p>
-                <p className="font-semibold text-blue-600">privacy@trizen-ai.com</p>
+                <p className="font-semibold text-blue-600">hello@trizen-ai.com</p>
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">General Inquiries</p>
@@ -453,7 +453,7 @@ export default function PrivacyPolicy() {
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
               <h4 className="font-semibold text-amber-900 mb-2">How to Exercise Your Rights</h4>
               <p className="text-amber-800 text-sm">
-                To exercise any of these rights, please contact us at <strong>privacy@trizen-ai.com</strong> or 
+                To exercise any of these rights, please contact us at <strong>hello@trizen-ai.com</strong> or 
                 visit our <Link to="/data-deletion" className="underline font-medium">Data Deletion page</Link>. 
                 We will respond to your request within 30 days as required by GDPR.
               </p>
@@ -479,7 +479,7 @@ export default function PrivacyPolicy() {
               Our Services are not intended for individuals under the age of 18. We do not knowingly collect 
               personal information from children. If we become aware that we have collected personal data from 
               a child without parental consent, we will take immediate steps to delete such information. If you 
-              believe we have collected information from a child, please contact us at <strong>privacy@trizen-ai.com</strong>.
+              believe we have collected information from a child, please contact us at <strong>hello@trizen-ai.com</strong>.
             </p>
             </section>
 
@@ -520,7 +520,7 @@ export default function PrivacyPolicy() {
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">Data Protection Officer</p>
-                <p className="font-semibold">privacy@trizen-ai.com</p>
+                <p className="font-semibold">hello@trizen-ai.com</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">General Inquiries</p>
