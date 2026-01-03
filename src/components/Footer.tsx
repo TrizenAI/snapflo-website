@@ -2,10 +2,12 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <img src="/snapflo-logo.png" alt="Snapflow" className="h-10 mb-4 brightness-0 invert" />
             <p className="text-gray-400 leading-relaxed">
@@ -19,6 +21,16 @@ export default function Footer() {
               <li><a href="#features" className="hover:text-white transition">Features</a></li>
               <li><a href="#analytics" className="hover:text-white transition">Analytics</a></li>
               <li><a href="#" className="hover:text-white transition">Integrations</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:text-white transition">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link></li>
+              <li><Link to="/data-deletion" className="hover:text-white transition">Data Deletion</Link></li>
             </ul>
           </div>
 
@@ -44,12 +56,12 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2026 Snapflo. All rights reserved.
+              © {currentYear} Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-white transition">Terms of Service</Link>
-              <Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link>
+              <Link to="/data-deletion" className="hover:text-white transition">Data Deletion</Link>
             </div>
           </div>
         </div>
