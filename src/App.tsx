@@ -11,6 +11,7 @@ import ContactModal from './components/ContactModal';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
+import DataDeletion from './pages/DataDeletion';
 
 function HomePage() {
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
@@ -52,6 +53,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/data-deletion" element={<DataDeletion />} />
       </Routes>
     </div>
   );
