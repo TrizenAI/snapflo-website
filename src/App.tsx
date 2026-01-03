@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import SocialMediaSection from './components/SocialMediaSection';
@@ -7,8 +8,11 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import SignupModal from './components/SignupModal';
 import ContactModal from './components/ContactModal';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
 
-function App() {
+function HomePage() {
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
@@ -21,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <Hero onGetStarted={handleGetStarted} />
       <Features />
       <SocialMediaSection />
@@ -36,6 +40,19 @@ function App() {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
       />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+      </Routes>
     </div>
   );
 }

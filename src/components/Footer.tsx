@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -26,11 +27,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>hello@trizen-ai.com</span>
+                <a href="mailto:hello@trizen-ai.com" className="hover:text-white transition">hello@trizen-ai.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 9003382337</span>
+                <a href="tel:+919003382337" className="hover:text-white transition">+91 9003382337</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
@@ -43,12 +44,12 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2026 Snapflow. All rights reserved.
+              © 2026 Snapflo. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition">Terms of Service</a>
-              <a href="#" className="hover:text-white transition">Cookie Policy</a>
+              <Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition">Terms of Service</Link>
+              <Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link>
             </div>
           </div>
         </div>
