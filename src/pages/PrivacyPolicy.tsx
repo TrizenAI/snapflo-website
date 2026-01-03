@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">General Inquiries</p>
-                <p className="font-semibold text-blue-600">hello@trizen-ai.com</p>
+                <p className="font-semibold text-blue-600">talent@trizen-ai.com</p>
               </div>
             </div>
           </div>
@@ -524,7 +524,7 @@ export default function PrivacyPolicy() {
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">General Inquiries</p>
-                <p className="font-semibold">hello@trizen-ai.com</p>
+                <p className="font-semibold">talent@trizen-ai.com</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">Phone</p>

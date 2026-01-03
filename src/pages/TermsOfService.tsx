@@ -397,7 +397,7 @@ export default function TermsOfService() {
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-indigo-300 mb-1">General Inquiries</p>
-                <p className="font-semibold">hello@trizen-ai.com</p>
+                <p className="font-semibold">talent@trizen-ai.com</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-indigo-300 mb-1">Phone</p>
