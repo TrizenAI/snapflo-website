@@ -6,8 +6,8 @@ import { X, Loader2, CheckCircle, AlertCircle, Eye, EyeOff } from 'lucide-react'
 import axios from 'axios';
 
 const BASE_DOMAIN = 'snapflo.studio';
-const API_BASE_URL = 'http://localhost:7200';
-// const API_BASE_URL = 'https://dev.api.snapflo.studio';
+// const API_BASE_URL = 'http://localhost:7200';
+const API_BASE_URL = 'https://api.dev.snapflo.studio';
 
 const signupSchema = z
   .object({
