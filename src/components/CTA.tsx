@@ -5,40 +5,63 @@ interface CTAProps {
   onScheduleDemo: () => void;
 }
 
+const stats = [
+  { value: '500+', label: 'Studios' },
+  { value: '₹2Cr+', label: 'Revenue tracked' },
+  { value: '98%',  label: 'Satisfaction' },
+];
+
 export default function CTA({ onGetStarted, onScheduleDemo }: CTAProps) {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-600 to-red-600 rounded-3xl p-12 md:p-16 shadow-2xl relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Ready to Transform Your Photo Studio?
-            </h2>
-            <p className="text-xl text-blue-50 mb-8 max-w-2xl">
-              Join hundreds of photographers who are growing their business with Snapflow.
-              Get started today and transform your studio operations.
-            </p>
+    <section className="relative">
+      {/* Rainbow divider at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] z-10" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+      <div className="grid md:grid-cols-2 min-h-[420px]">
+
+        {/* Left — cream, text */}
+        <div className="bg-[#FAFAF7] flex items-center px-10 lg:px-20 py-20">
+          <div>
+            <p className="text-indigo-400 text-xs font-semibold uppercase tracking-widest mb-5">
+              Free Trial · No Credit Card
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-5">
+              Grow your studio.<br />Start for free.
+            </h2>
+            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-sm">
+              Join studio owners, freelancers, and content creators managing billing, bookings, and clients — all from one place.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button
                 onClick={onGetStarted}
-                className="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-50 transition font-semibold text-lg flex items-center justify-center gap-2 shadow-lg"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-white hover:opacity-90 transition shadow-md"
+                style={{ background: '#6366F1' }}
               >
-                Get Started
-                <ArrowRight className="w-5 h-5" />
+                Get Started Free
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button 
+              <button
                 onClick={onScheduleDemo}
-                className="bg-transparent text-white px-8 py-4 rounded-xl hover:bg-white/10 transition font-semibold text-lg border-2 border-white"
+                className="inline-flex items-center px-7 py-3.5 rounded-xl font-semibold text-sm text-gray-500 border border-gray-200 hover:border-gray-300 hover:text-gray-800 transition"
               >
-                Schedule Demo
+                Schedule a Demo
               </button>
             </div>
           </div>
-
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-400/20 rounded-full blur-3xl"></div>
         </div>
+
+        {/* Right — indigo, stats */}
+        <div className="bg-indigo-600 flex items-center px-10 lg:px-20 py-20">
+          <div className="w-full space-y-10">
+            {stats.map((s, i) => (
+              <div key={i} className={`flex items-end gap-4 ${i < stats.length - 1 ? 'pb-10 border-b border-indigo-500' : ''}`}>
+                <span className="text-5xl lg:text-6xl font-bold text-white leading-none">{s.value}</span>
+                <span className="text-indigo-300 text-sm pb-2">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

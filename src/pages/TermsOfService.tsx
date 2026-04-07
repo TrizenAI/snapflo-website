@@ -61,7 +61,7 @@ export default function TermsOfService() {
             <div className="prose prose-slate max-w-none">
               <p className="text-slate-600 leading-relaxed text-lg">
                 These Terms of Service ("Terms," "Agreement") constitute a legally binding agreement between you 
-                ("User," "you," or "your") and <strong>TRIZENAI TECHNOLOGIES PRIVATE LIMITED</strong> ("Company," 
+                ("User," "you," or "your") and <strong>TrizenAI Technologies Private Limited</strong> ("Company," 
                 "we," "us," or "our"), governing your access to and use of Snapflo, our photo studio management 
                 platform and related services (collectively, the "Services").
               </p>
@@ -251,7 +251,7 @@ export default function TermsOfService() {
           <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Intellectual Property Rights</h2>
             <div className="space-y-4 text-slate-600">
-              <p><strong>7.1 Our Intellectual Property:</strong> The Services, including all software, source code, designs, graphics, user interfaces, logos, trademarks, and documentation, are owned by TRIZENAI TECHNOLOGIES PRIVATE LIMITED and protected by intellectual property laws.</p>
+              <p><strong>7.1 Our Intellectual Property:</strong> The Services, including all software, source code, designs, graphics, user interfaces, logos, trademarks, and documentation, are owned by TrizenAI Technologies Private Limited and protected by intellectual property laws.</p>
               
               <p><strong>7.2 Limited License:</strong> Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Services for your internal business purposes.</p>
 
@@ -294,7 +294,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-bold text-slate-900">9. Limitation of Liability</h2>
             </div>
             <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 text-slate-600 space-y-4">
-              <p><strong>9.1</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TRIZENAI TECHNOLOGIES PRIVATE LIMITED AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR:</p>
+              <p><strong>9.1</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TrizenAI Technologies Private Limited AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Any indirect, incidental, special, consequential, or punitive damages;</li>
                 <li>Loss of profits, revenue, data, business opportunities, or goodwill;</li>
@@ -314,7 +314,7 @@ export default function TermsOfService() {
           <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">10. Indemnification</h2>
             <div className="space-y-4 text-slate-600">
-              <p><strong>10.1</strong> You agree to indemnify, defend, and hold harmless TRIZENAI TECHNOLOGIES PRIVATE LIMITED and its officers, directors, employees, agents, licensors, and service providers from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or related to:</p>
+              <p><strong>10.1</strong> You agree to indemnify, defend, and hold harmless TrizenAI Technologies Private Limited and its officers, directors, employees, agents, licensors, and service providers from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or related to:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Your use or misuse of the Services;</li>
                 <li>Your violation of these Terms;</li>
@@ -335,7 +335,7 @@ export default function TermsOfService() {
               
               <p><strong>11.2 Dispute Resolution:</strong></p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Informal Resolution:</strong> Before initiating formal proceedings, you agree to first contact us at legal@trizen-ai.com to attempt to resolve any dispute informally within 30 days.</li>
+                <li><strong>Informal Resolution:</strong> Before initiating formal proceedings, you agree to first contact us at support@snapflo.studio to attempt to resolve any dispute informally within 30 days.</li>
                 <li><strong>Arbitration:</strong> Any dispute that cannot be resolved informally shall be settled by binding arbitration in accordance with the Arbitration and Conciliation Act, 1996 of India.</li>
                 <li><strong>Jurisdiction:</strong> The arbitration shall take place in Chennai, Tamil Nadu, India, and the proceedings shall be conducted in English.</li>
               </ul>
@@ -393,11 +393,11 @@ export default function TermsOfService() {
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-indigo-300 mb-1">Legal Department</p>
-                <p className="font-semibold">legal@trizen-ai.com</p>
+                <p className="font-semibold">support@snapflo.studio</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-indigo-300 mb-1">General Inquiries</p>
-                <p className="font-semibold">talent@trizen-ai.com</p>
+                <p className="font-semibold">support@snapflo.studio</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-indigo-300 mb-1">Phone</p>
@@ -411,7 +411,7 @@ export default function TermsOfService() {
 
             <div className="bg-white/10 rounded-xl p-4">
               <p className="text-indigo-200 text-sm">
-                <strong className="text-white">TRIZENAI TECHNOLOGIES PRIVATE LIMITED</strong><br />
+                <strong className="text-white">TrizenAI Technologies Private Limited</strong><br />
                 By using Snapflo, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
               </p>
               </div>
@@ -419,7 +419,7 @@ export default function TermsOfService() {
 
           {/* Footer */}
           <div className="mt-8 text-center text-slate-500 text-sm">
-            <p>© {currentYear} Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED. All rights reserved.</p>
+            <p>© {currentYear} Snapflo by TrizenAI Technologies Private Limited. All rights reserved.</p>
           </div>
         </div>
       </div>
