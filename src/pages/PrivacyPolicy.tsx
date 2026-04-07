@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
             </div>
             <div className="prose prose-slate max-w-none">
               <p className="text-slate-600 leading-relaxed text-lg">
-                TRIZENAI TECHNOLOGIES PRIVATE LIMITED ("Company," "we," "us," or "our") operates Snapflo, 
+                TrizenAI Technologies Private Limited ("Company," "we," "us," or "our") operates Snapflo, 
                 a photo studio management platform. This Privacy Policy describes how we collect, use, process, 
                 and protect your personal information in compliance with applicable data protection laws, including 
                 the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and 
@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <p className="text-sm text-slate-500 mb-1">Company Name</p>
-                <p className="font-semibold text-slate-900">TRIZENAI TECHNOLOGIES PRIVATE LIMITED</p>
+                <p className="font-semibold text-slate-900">TrizenAI Technologies Private Limited</p>
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">Registered Address</p>
@@ -86,11 +86,11 @@ export default function PrivacyPolicy() {
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">Data Protection Officer Email</p>
-                <p className="font-semibold text-blue-600">hello@trizen-ai.com</p>
+                <p className="font-semibold text-blue-600">support@snapflo.studio</p>
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">General Inquiries</p>
-                <p className="font-semibold text-blue-600">talent@trizen-ai.com</p>
+                <p className="font-semibold text-blue-600">support@snapflo.studio</p>
               </div>
             </div>
           </div>
@@ -453,7 +453,7 @@ export default function PrivacyPolicy() {
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
               <h4 className="font-semibold text-amber-900 mb-2">How to Exercise Your Rights</h4>
               <p className="text-amber-800 text-sm">
-                To exercise any of these rights, please contact us at <strong>hello@trizen-ai.com</strong> or 
+                To exercise any of these rights, please contact us at <strong>support@snapflo.studio</strong> or 
                 visit our <Link to="/data-deletion" className="underline font-medium">Data Deletion page</Link>. 
                 We will respond to your request within 30 days as required by GDPR.
               </p>
@@ -479,7 +479,7 @@ export default function PrivacyPolicy() {
               Our Services are not intended for individuals under the age of 18. We do not knowingly collect 
               personal information from children. If we become aware that we have collected personal data from 
               a child without parental consent, we will take immediate steps to delete such information. If you 
-              believe we have collected information from a child, please contact us at <strong>hello@trizen-ai.com</strong>.
+              believe we have collected information from a child, please contact us at <strong>support@snapflo.studio</strong>.
             </p>
             </section>
 
@@ -520,11 +520,11 @@ export default function PrivacyPolicy() {
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">Data Protection Officer</p>
-                <p className="font-semibold">hello@trizen-ai.com</p>
+                <p className="font-semibold">support@snapflo.studio</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">General Inquiries</p>
-                <p className="font-semibold">talent@trizen-ai.com</p>
+                <p className="font-semibold">support@snapflo.studio</p>
               </div>
               <div className="p-4 bg-white/10 rounded-xl">
                 <p className="text-sm text-slate-400 mb-1">Phone</p>
@@ -538,7 +538,7 @@ export default function PrivacyPolicy() {
 
             <div className="bg-white/10 rounded-xl p-4">
               <p className="text-slate-300 text-sm">
-                <strong className="text-white">TRIZENAI TECHNOLOGIES PRIVATE LIMITED</strong><br />
+                <strong className="text-white">TrizenAI Technologies Private Limited</strong><br />
                 For GDPR-related inquiries, EEA residents may also contact their local Data Protection Authority.
               </p>
               </div>
@@ -546,7 +546,7 @@ export default function PrivacyPolicy() {
 
           {/* Footer */}
           <div className="mt-8 text-center text-slate-500 text-sm">
-            <p>© {currentYear} Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED. All rights reserved.</p>
+            <p>© {currentYear} Snapflo by TrizenAI Technologies Private Limited. All rights reserved.</p>
           </div>
         </div>
       </div>

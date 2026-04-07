@@ -291,11 +291,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 text-sm">
               <a 
-                href="mailto:hello@trizen-ai.com" 
+                href="mailto:support@snapflo.studio" 
                 className="flex items-center justify-center gap-2 text-purple-600 hover:text-purple-700"
               >
                 <Mail className="w-4 h-4" />
-                hello@trizen-ai.com
+                support@snapflo.studio
               </a>
               <a 
                 href="tel:+919003382337" 

@@ -23,7 +23,7 @@ export default function DataDeletion() {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Data Deletion Request</h1>
               <p className="text-rose-300 mt-3 text-lg">GDPR & Privacy Rights Compliance</p>
-              <p className="text-rose-400 mt-1">Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED</p>
+              <p className="text-rose-400 mt-1">Snapflo by TrizenAI Technologies Private Limited</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function DataDeletion() {
             </div>
             <div className="prose prose-slate max-w-none">
               <p className="text-slate-600 leading-relaxed text-lg">
-                At <strong>TRIZENAI TECHNOLOGIES PRIVATE LIMITED</strong>, we respect your privacy and your right 
+                At <strong>TrizenAI Technologies Private Limited</strong>, we respect your privacy and your right 
                 to control your personal data. In compliance with the <strong>General Data Protection Regulation (GDPR)</strong>, 
                 the <strong>California Consumer Privacy Act (CCPA)</strong>, and other applicable privacy laws, you 
                 have the right to request the deletion of your personal data ("Right to Erasure" or "Right to be Forgotten").
@@ -187,8 +187,8 @@ export default function DataDeletion() {
               <div className="space-y-4">
                 <div className="p-4 bg-slate-50 rounded-lg">
                   <p className="text-sm text-slate-500 mb-1">Send your request to:</p>
-                  <a href="mailto:hello@trizen-ai.com" className="text-xl font-semibold text-blue-600 hover:text-blue-700">
-                    hello@trizen-ai.com
+                  <a href="mailto:support@snapflo.studio" className="text-xl font-semibold text-blue-600 hover:text-blue-700">
+                    support@snapflo.studio
                   </a>
                 </div>
 
@@ -282,7 +282,7 @@ export default function DataDeletion() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">4</span>
-                  <span>This will revoke our access; email us at <strong>hello@trizen-ai.com</strong> to complete the deletion</span>
+                  <span>This will revoke our access; email us at <strong>support@snapflo.studio</strong> to complete the deletion</span>
                 </li>
               </ol>
             </div>
@@ -465,7 +465,7 @@ export default function DataDeletion() {
             
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <a 
-                href="mailto:hello@trizen-ai.com"
+                href="mailto:support@snapflo.studio"
                 className="p-4 bg-white/10 rounded-xl hover:bg-white/20 transition flex items-center gap-3"
               >
                 <div className="w-10 h-10 bg-rose-500 rounded-lg flex items-center justify-center">
@@ -473,12 +473,12 @@ export default function DataDeletion() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400">Data Protection Officer</p>
-                  <p className="font-semibold">hello@trizen-ai.com</p>
+                  <p className="font-semibold">support@snapflo.studio</p>
                 </div>
               </a>
               
               <a 
-                href="mailto:hello@trizen-ai.com"
+                href="mailto:support@snapflo.studio"
                 className="p-4 bg-white/10 rounded-xl hover:bg-white/20 transition flex items-center gap-3"
               >
                 <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -486,14 +486,14 @@ export default function DataDeletion() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400">General Support</p>
-                  <p className="font-semibold">hello@trizen-ai.com</p>
+                  <p className="font-semibold">support@snapflo.studio</p>
                 </div>
               </a>
             </div>
 
             <div className="bg-white/10 rounded-xl p-4">
               <p className="text-slate-300 text-sm">
-                <strong className="text-white">TRIZENAI TECHNOLOGIES PRIVATE LIMITED</strong><br />
+                <strong className="text-white">TrizenAI Technologies Private Limited</strong><br />
                 Registered Office: Chennai, Tamil Nadu, India<br />
                 Phone: +91 9003382337
               </p>
@@ -509,7 +509,7 @@ export default function DataDeletion() {
 
           {/* Footer */}
           <div className="mt-8 text-center text-slate-500 text-sm">
-            <p>© {currentYear} Snapflo by TRIZENAI TECHNOLOGIES PRIVATE LIMITED. All rights reserved.</p>
+            <p>© {currentYear} Snapflo by TrizenAI Technologies Private Limited. All rights reserved.</p>
             <p className="mt-2">
               <Link to="/privacy-policy" className="hover:text-slate-700">Privacy Policy</Link>
               <span className="mx-2">•</span>

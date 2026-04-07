@@ -158,7 +158,7 @@ export default function CookiePolicy() {
                 If you have any questions about our use of cookies or this Cookie Policy, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                <p className="text-gray-700"><strong>Email:</strong> hello@trizen-ai.com</p>
+                <p className="text-gray-700"><strong>Email:</strong> support@snapflo.studio</p>
                 <p className="text-gray-700"><strong>Phone:</strong> +91 9003382337</p>
                 <p className="text-gray-700"><strong>Address:</strong> Chennai, Tamilnadu, India</p>
               </div>

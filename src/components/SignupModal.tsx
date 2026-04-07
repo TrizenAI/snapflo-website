@@ -141,7 +141,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
               Create Your Studio Account
             </h2>
             <p className="text-blue-100">
-              Start managing your photo studio today
+              Start managing your business today
             </p>
           </div>
         </div>
