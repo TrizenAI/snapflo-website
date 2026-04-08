@@ -31,7 +31,7 @@ export default function Hero({ onGetStarted }: HeroProps) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-[#FAFAF7]">
+    <div className="relative overflow-hidden bg-[#FAFAF7] min-h-screen flex flex-col">
 
       {/* Pastel orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -74,8 +74,8 @@ export default function Hero({ onGetStarted }: HeroProps) {
       </nav>
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-12 lg:pb-24">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 flex-1 flex items-center container mx-auto px-4 sm:px-6 pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-12 lg:pb-24">
+        <div className="w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Left — text */}
           <div className="text-center lg:text-left order-2 lg:order-1">
