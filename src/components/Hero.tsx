@@ -81,34 +81,35 @@ export default function Hero({ onGetStarted }: HeroProps) {
           <div className="text-center lg:text-left order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 leading-tight">
               Every frame,
+              {/* Fixed-height clip zone */}
               <span
-                className="block mt-1 overflow-hidden"
-                style={{ perspective: '600px', lineHeight: '1.25' }}
+                className="block mt-1 overflow-hidden relative"
+                style={{ height: '1.25em' }}
               >
-                {/* captured. — rolls out */}
+                {/* captured. — flips out upward */}
                 <span
-                  className="text-transparent bg-clip-text block"
+                  className="absolute inset-0 text-transparent bg-clip-text"
                   style={{
                     backgroundImage: VIBGYOR,
-                    transformOrigin: 'top center',
-                    transform: rolled ? 'rotateX(90deg)' : 'rotateX(0deg)',
+                    transformOrigin: 'center top',
+                    transform: rolled ? 'translateY(-105%) scaleY(0.4)' : 'translateY(0%) scaleY(1)',
                     opacity: rolled ? 0 : 1,
-                    transition: 'transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease',
-                    position: rolled ? 'absolute' : 'relative',
+                    transition: 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
+                    willChange: 'transform, opacity',
                   }}
                 >
                   captured.
                 </span>
-                {/* delivered. — rolls in */}
+                {/* delivered. — flips in from bottom */}
                 <span
-                  className="text-transparent bg-clip-text block"
+                  className="absolute inset-0 text-transparent bg-clip-text"
                   style={{
                     backgroundImage: VIBGYOR,
-                    transformOrigin: 'bottom center',
-                    transform: rolled ? 'rotateX(0deg)' : 'rotateX(-90deg)',
+                    transformOrigin: 'center bottom',
+                    transform: rolled ? 'translateY(0%) scaleY(1)' : 'translateY(105%) scaleY(0.4)',
                     opacity: rolled ? 1 : 0,
-                    transition: 'transform 0.55s cubic-bezier(0.4,0,0.2,1) 0.1s, opacity 0.4s ease 0.1s',
-                    position: rolled ? 'relative' : 'absolute',
+                    transition: 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0.4s ease 0.05s',
+                    willChange: 'transform, opacity',
                   }}
                 >
                   delivered.
