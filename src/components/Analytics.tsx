@@ -33,7 +33,7 @@ export default function Analytics() {
   }, []);
 
   return (
-    <section id="analytics" ref={sectionRef} className="py-24 bg-[#FAFAF7] relative">
+    <section id="analytics" ref={sectionRef} className="bg-[#FAFAF7] relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
 
       <style>{`
@@ -60,12 +60,12 @@ export default function Analytics() {
         }
       `}</style>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Data-Driven{' '}
               <span
                 className={`text-transparent bg-clip-text ${visible ? 'analytics-gradient' : ''}`}
