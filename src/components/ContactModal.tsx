@@ -8,12 +8,14 @@ import axios from 'axios';
 // const API_BASE_URL = 'http://localhost:7200';
 const API_BASE_URL = 'https://dev.api.snapflo.studio';
 
+const VIBGYOR = 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)';
+
 const contactSchema = z.object({
   name: z
     .string()
     .min(1, 'Full name is required')
-    .trim()
-    .min(2, 'Name must be at least 2 characters'),
+    .transform(v => v.trim())
+    .pipe(z.string().min(2, 'Name must be at least 2 characters')),
   email: z
     .string()
     .min(1, 'Email address is required')
@@ -111,118 +113,126 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-lg mx-4 bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden">
+      <div className="relative w-full max-w-lg mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
+
+        {/* Rainbow top bar */}
+        <div className="h-[3px] w-full" style={{ background: VIBGYOR }} />
+
         {/* Header */}
-        <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-8">
+        <div className="relative bg-[#FAFAF7] px-6 pt-7 pb-6 border-b border-gray-100">
           <button
             onClick={handleClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition text-white"
+            className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-gray-200 transition text-gray-400 hover:text-gray-600"
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-8 h-8 text-white" />
+          <div className="flex items-center gap-4">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md flex-shrink-0"
+              style={{ background: '#6366F1' }}
+            >
+              <Calendar className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Schedule a Demo
-            </h2>
-            <p className="text-purple-100">
-              Let us show you how Snapflow can transform your studio
-            </p>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">Schedule a Demo</h2>
+              <p className="text-sm text-gray-500 mt-0.5">
+                We'll show you how Snapflo fits your studio
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Toast */}
         {toast.show && (
           <div
-            className={`mx-6 mt-4 p-4 rounded-lg flex items-center gap-3 ${
+            className={`mx-6 mt-4 p-3.5 rounded-xl flex items-center gap-3 text-sm ${
               toast.type === 'success'
                 ? 'bg-green-50 text-green-800 border border-green-200'
                 : 'bg-red-50 text-red-800 border border-red-200'
             }`}
           >
             {toast.type === 'success' ? (
-              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
             ) : (
-              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
             )}
-            <span className="text-sm">{toast.message}</span>
+            <span>{toast.message}</span>
           </div>
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+        <form onSubmit={handleSubmit(onSubmit)} className="p-6">
           <div className="space-y-4">
+
             {/* Full Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Full Name <span className="text-red-500">*</span>
+                Full Name <span className="text-red-400">*</span>
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="John Doe"
                   disabled={isLoading}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
+                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
                     errors.name
-                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-200 focus:ring-purple-500 focus:border-purple-500'
-                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-500`}
+                      ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
+                      : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
+                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-400`}
                   {...register('name')}
                 />
               </div>
               {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
               )}
             </div>
 
             {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address <span className="text-red-500">*</span>
+                Email Address <span className="text-red-400">*</span>
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="email"
                   placeholder="email@example.com"
                   disabled={isLoading}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
+                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
                     errors.email
-                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-200 focus:ring-purple-500 focus:border-purple-500'
-                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-500`}
+                      ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
+                      : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
+                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-400`}
                   {...register('email')}
                 />
               </div>
               {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
               )}
             </div>
 
             {/* Phone */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number <span className="text-red-500">*</span>
+                Phone Number <span className="text-red-400">*</span>
               </label>
               <div className="relative">
-                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="tel"
                   placeholder="+91 9876543210"
                   disabled={isLoading}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border ${
+                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
                     errors.phone
-                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-200 focus:ring-purple-500 focus:border-purple-500'
-                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-500`}
+                      ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
+                      : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
+                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-400`}
                   {...register('phone')}
                 />
               </div>
               {errors.phone && (
-                <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>
               )}
             </div>
 
@@ -235,7 +245,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 type="text"
                 placeholder="Your Studio Name"
                 disabled={isLoading}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-purple-500 focus:border-purple-500 focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-500"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-400"
                 {...register('studioName')}
               />
             </div>
@@ -243,24 +253,24 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {/* Message */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Message <span className="text-red-500">*</span>
+                Message <span className="text-red-400">*</span>
               </label>
               <div className="relative">
-                <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                 <textarea
                   placeholder="Tell us about your studio and what you're looking for..."
-                  rows={4}
+                  rows={3}
                   disabled={isLoading}
-                  className={`w-full pl-10 pr-4 py-3 rounded-lg border resize-none ${
+                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border resize-none text-sm ${
                     errors.message
-                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                      : 'border-gray-200 focus:ring-purple-500 focus:border-purple-500'
-                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-500`}
+                      ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
+                      : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
+                  } focus:outline-none focus:ring-2 transition disabled:bg-gray-50 disabled:text-gray-400`}
                   {...register('message')}
                 />
               </div>
               {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
               )}
             </div>
           </div>
@@ -269,39 +279,38 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition font-semibold text-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
+            className="w-full mt-5 text-white px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+            style={{ background: '#6366F1' }}
           >
             {isLoading ? (
               <>
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-4 h-4 animate-spin" />
                 Sending...
               </>
             ) : (
               <>
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-4 h-4" />
                 Request Demo
               </>
             )}
           </button>
 
           {/* Contact Info */}
-          <div className="mt-6 pt-6 border-t border-gray-100">
-            <p className="text-center text-sm text-gray-500 mb-3">
-              Or reach out directly
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 text-sm">
-              <a 
-                href="mailto:support@snapflo.studio" 
-                className="flex items-center justify-center gap-2 text-purple-600 hover:text-purple-700"
+          <div className="mt-5 pt-5 border-t border-gray-100">
+            <p className="text-center text-xs text-gray-400 mb-3">Or reach out directly</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 text-sm">
+              <a
+                href="mailto:support@snapflo.studio"
+                className="flex items-center justify-center gap-1.5 text-indigo-500 hover:text-indigo-700 transition text-xs"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-3.5 h-3.5" />
                 support@snapflo.studio
               </a>
-              <a 
-                href="tel:+919003382337" 
-                className="flex items-center justify-center gap-2 text-purple-600 hover:text-purple-700"
+              <a
+                href="tel:+919003382337"
+                className="flex items-center justify-center gap-1.5 text-indigo-500 hover:text-indigo-700 transition text-xs"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 +91 9003382337
               </a>
             </div>
@@ -311,4 +320,3 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     </div>
   );
 }
-

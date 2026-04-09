@@ -20,9 +20,10 @@ const VIBGYOR = 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #
 
 interface HeroProps {
   onGetStarted: () => void;
+  onScheduleDemo: () => void;
 }
 
-export default function Hero({ onGetStarted }: HeroProps) {
+export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
   const [rolled, setRolled] = useState(false);
 
   useEffect(() => {
@@ -128,14 +129,22 @@ export default function Hero({ onGetStarted }: HeroProps) {
               </span>
             </p>
 
-            <button
-              onClick={onGetStarted}
-              className="group text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg inline-flex items-center gap-3 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl"
-              style={{ background: '#6366F1' }}
-            >
-              Start Free Trial
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <button
+                onClick={onGetStarted}
+                className="group text-white w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl"
+                style={{ background: '#6366F1' }}
+              >
+                Start Free Trial
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={onScheduleDemo}
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 border border-indigo-400 text-indigo-500 hover:border-indigo-500 hover:text-indigo-700 transition-all hover:scale-[1.02]"
+              >
+                Schedule a Demo
+              </button>
+            </div>
           </div>
 
           {/* Right — photo wall */}

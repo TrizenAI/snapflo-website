@@ -27,7 +27,7 @@ function HomePage() {
 
   return (
     <>
-      <Hero onGetStarted={handleGetStarted} />
+      <Hero onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
       <Features />
       <SocialMediaSection />
       <Analytics />
