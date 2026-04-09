@@ -42,7 +42,7 @@ export default function CTA({ onGetStarted, onScheduleDemo }: CTAProps) {
               </button>
               <button
                 onClick={onScheduleDemo}
-                className="inline-flex items-center px-7 py-3.5 rounded-xl font-semibold text-sm text-gray-500 border border-gray-200 hover:border-gray-300 hover:text-gray-800 transition"
+                className="inline-flex items-center px-7 py-3.5 rounded-xl font-semibold text-sm text-indigo-500 border border-indigo-400 hover:border-indigo-500 hover:text-indigo-700 transition"
               >
                 Schedule a Demo
               </button>
