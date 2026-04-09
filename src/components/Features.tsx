@@ -61,11 +61,11 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="bg-white relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Everything You Need to{' '}
             <span
               className="text-transparent bg-clip-text"
@@ -79,7 +79,7 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {features.map((feature, index) => (
             <div
               key={index}

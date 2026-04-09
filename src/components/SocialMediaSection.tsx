@@ -18,15 +18,15 @@ const checkPoints = [
 
 export default function SocialMediaSection() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="bg-white relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
             {/* Left — text */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Post Everywhere{' '}
                 <span
                   className="text-transparent bg-clip-text"
