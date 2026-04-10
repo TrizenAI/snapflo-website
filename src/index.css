@@ -9,3 +9,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Prevent font from blocking first paint */
+@font-face {
+  font-family: 'DM Sans';
+  font-display: swap;
+}

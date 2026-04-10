@@ -173,9 +173,9 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
                     src={photo.src}
                     alt=""
                     className="w-full h-full object-cover"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="sync"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={i === 0 ? 'high' : 'low'}
+                    decoding={i === 0 ? 'sync' : 'async'}
                   />
                 </div>
               ))}
