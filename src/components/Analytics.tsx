@@ -92,7 +92,7 @@ export default function Analytics() {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-1">{s.display}</h3>
                 <p className="text-gray-500 mb-3">{s.label}</p>
-                <div className="flex items-center gap-1" style={{ color: s.change.startsWith('+') ? '#16A34A' : '#DC2626' }}>
+                <div className="flex items-center gap-1" style={{ color: s.change.startsWith('+') ? '#16A34A' : '#B91C1C' }}>
                   <TrendingUp className="w-4 h-4" />
                   <span className="text-sm font-semibold">{s.change}</span>
                 </div>

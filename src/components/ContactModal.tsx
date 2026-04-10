@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { X, Loader2, CheckCircle, AlertCircle, Calendar, Phone, Mail, User, MessageSquare } from 'lucide-react';
+import { X, Loader2, CheckCircle, AlertCircle, Calendar, User, Mail, Phone, MessageSquare } from 'lucide-react';
 
 // const API_BASE_URL = 'http://localhost:7200';
 const API_BASE_URL = 'https://dev.api.snapflo.studio';
@@ -18,7 +18,7 @@ const contactSchema = z.object({
   email: z
     .string()
     .min(1, 'Email address is required')
-    .email('Please enter a valid email address'),
+    .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address'),
   phone: z
     .string()
     .min(1, 'Phone number is required')
@@ -107,21 +107,21 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={handleClose}
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-lg mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden">
 
         {/* Rainbow top bar */}
-        <div className="h-[3px] w-full" style={{ background: VIBGYOR }} />
+        <div className="h-[3px] flex-shrink-0 w-full" style={{ background: VIBGYOR }} />
 
         {/* Header */}
-        <div className="relative bg-[#FAFAF7] px-6 pt-7 pb-6 border-b border-gray-100">
+        <div className="relative bg-[#FAFAF7] px-5 pt-4 pb-4 border-b border-gray-100">
           <button
             onClick={handleClose}
             className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-gray-200 transition text-gray-400 hover:text-gray-600"
@@ -147,7 +147,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         {/* Toast */}
         {toast.show && (
           <div
-            className={`mx-6 mt-4 p-3.5 rounded-xl flex items-center gap-3 text-sm ${
+            className={`mx-4 mt-2 p-2.5 rounded-xl flex items-center gap-3 text-sm ${
               toast.type === 'success'
                 ? 'bg-green-50 text-green-800 border border-green-200'
                 : 'bg-red-50 text-red-800 border border-red-200'
@@ -163,8 +163,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="p-6">
-          <div className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="p-4">
+          <div className="space-y-3">
 
             {/* Full Name */}
             <div>
@@ -177,7 +177,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="text"
                   placeholder="John Doe"
                   disabled={isLoading}
-                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
+                  className={`w-full pl-9 pr-4 py-2 rounded-lg border text-sm ${
                     errors.name
                       ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
                       : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
@@ -201,7 +201,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="email"
                   placeholder="email@example.com"
                   disabled={isLoading}
-                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
+                  className={`w-full pl-9 pr-4 py-2 rounded-lg border text-sm ${
                     errors.email
                       ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
                       : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
@@ -225,7 +225,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="tel"
                   placeholder="+91 9876543210"
                   disabled={isLoading}
-                  className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm ${
+                  className={`w-full pl-9 pr-4 py-2 rounded-lg border text-sm ${
                     errors.phone
                       ? 'border-red-300 focus:ring-red-400 focus:border-red-400'
                       : 'border-gray-200 focus:ring-indigo-400 focus:border-indigo-400'
@@ -261,7 +261,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                 <textarea
                   placeholder="Tell us about your studio and what you're looking for..."
-                  rows={3}
+                  rows={2}
                   disabled={isLoading}
                   className={`w-full pl-9 pr-4 py-2.5 rounded-lg border resize-none text-sm ${
                     errors.message
@@ -281,8 +281,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-5 text-white px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
-            style={{ background: '#6366F1' }}
+            className="w-full mt-4 text-white px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+            style={{ background: '#4F46E5' }}
           >
             {isLoading ? (
               <>
@@ -297,26 +297,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             )}
           </button>
 
-          {/* Contact Info */}
-          <div className="mt-5 pt-5 border-t border-gray-100">
-            <p className="text-center text-xs text-gray-400 mb-3">Or reach out directly</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 text-sm">
-              <a
-                href="mailto:support@snapflo.studio"
-                className="flex items-center justify-center gap-1.5 text-indigo-500 hover:text-indigo-700 transition text-xs"
-              >
-                <Mail className="w-3.5 h-3.5" />
-                support@snapflo.studio
-              </a>
-              <a
-                href="tel:+919003382337"
-                className="flex items-center justify-center gap-1.5 text-indigo-500 hover:text-indigo-700 transition text-xs"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                +91 9003382337
-              </a>
-            </div>
-          </div>
         </form>
       </div>
     </div>

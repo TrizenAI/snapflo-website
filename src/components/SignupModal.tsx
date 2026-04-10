@@ -80,13 +80,12 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={handleClose} />
 
       {/* Modal */}
-      <div className="relative w-full sm:max-w-md bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col overflow-hidden"
-        style={{ maxHeight: '100dvh' }}>
+      <div className="relative w-full sm:max-w-md bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
 
         {/* Rainbow top stripe */}
         <div className="h-[3px] flex-shrink-0" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
@@ -105,7 +104,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         </div>
 
         {/* Title */}
-        <div className="flex-shrink-0 px-5 pt-4 pb-1">
+        <div className="flex-shrink-0 px-5 pt-3 pb-1">
           <h2 className="text-xl font-bold text-gray-900">Get started for free</h2>
           <p className="text-sm text-gray-400 mt-0.5">Everything your business needs, in one place.</p>
         </div>
@@ -124,9 +123,9 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
           </div>
         )}
 
-        {/* Form — scrollable only if absolutely needed */}
-        <form onSubmit={handleSubmit(onSubmit)} className="flex-1 overflow-y-auto px-5 pb-5 pt-3">
-          <div className="grid grid-cols-2 gap-x-3 gap-y-3">
+        {/* Form */}
+        <form onSubmit={handleSubmit(onSubmit)} className="px-5 pb-5 pt-3">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
 
             {/* Studio Name */}
             <div className="col-span-2">
