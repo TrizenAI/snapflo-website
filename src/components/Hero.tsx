@@ -51,12 +51,12 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
               <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-9 sm:h-11 w-auto" fetchPriority="high" decoding="sync" width="450" height="150" />
             </picture>
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            <a href="#features" className="text-gray-500 hover:text-gray-900 transition font-medium text-sm lg:text-base">Features</a>
-            <a href="#analytics" className="text-gray-500 hover:text-gray-900 transition font-medium text-sm lg:text-base">Analytics</a>
+            <a href="#features" className="text-gray-700 hover:text-gray-900 transition font-medium text-sm lg:text-base">Features</a>
+            <a href="#analytics" className="text-gray-700 hover:text-gray-900 transition font-medium text-sm lg:text-base">Analytics</a>
             <button
               onClick={onGetStarted}
               className="px-5 py-2.5 rounded-lg font-semibold text-white hover:opacity-90 transition text-sm lg:text-base shadow-md"
-              style={{ background: '#6366F1' }}
+              style={{ background: '#4F46E5' }}
             >
               Get Started
             </button>
@@ -65,7 +65,7 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
           <button
             onClick={onGetStarted}
             className="md:hidden px-4 py-2 rounded-lg font-semibold text-white text-sm"
-            style={{ background: '#6366F1' }}
+            style={{ background: '#4F46E5' }}
           >
             Get Started
           </button>
@@ -132,14 +132,14 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
               <button
                 onClick={onGetStarted}
                 className="group text-white w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl"
-                style={{ background: '#6366F1' }}
+                style={{ background: '#4F46E5' }}
               >
                 Start Free Trial
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={onScheduleDemo}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 border border-indigo-400 text-indigo-500 hover:border-indigo-500 hover:text-indigo-700 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-base inline-flex items-center justify-center gap-2 border border-indigo-600 text-indigo-700 hover:border-indigo-700 hover:text-indigo-900 transition-all hover:scale-[1.02]"
               >
                 Schedule a Demo
               </button>
