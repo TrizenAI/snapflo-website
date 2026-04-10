@@ -26,10 +26,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#6366F1" />
 
-    <!-- Cache control — forces crawlers to re-fetch fresh content -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <!-- Content Security Policy — enforced in HTML so it works on any host -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://dev.api.snapflo.studio https://api.dev.snapflo.studio; base-uri 'self'; form-action 'self'" />
 
     <!-- Open Graph (WhatsApp, Facebook, Telegram, LinkedIn) -->
     <meta property="og:type" content="website" />
