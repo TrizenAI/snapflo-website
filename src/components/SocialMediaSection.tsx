@@ -18,7 +18,7 @@ const checkPoints = [
 
 export default function SocialMediaSection() {
   return (
-    <section className="bg-white relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
+    <section aria-label="Social Media Scheduling" className="bg-white relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

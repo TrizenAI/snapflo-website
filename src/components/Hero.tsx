@@ -3,11 +3,11 @@ import { ArrowRight } from 'lucide-react';
 
 // Static public paths — browser can discover & preload before JS runs
 const wallPhotos = [
-  { src: '/images/arrangement-professional-photographer-equipment.webp',  style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
-  { src: '/images/photographer-taking-photos-handsome-model.webp',        style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
-  { src: '/images/young-man-working-his-photography-studio.webp',         style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
-  { src: '/images/full-shot-woman-working-as-photographer.webp',          style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
-  { src: '/images/man-working-his-photography-studio.webp',               style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
+  { src: '/images/arrangement-professional-photographer-equipment.webp',  alt: 'Professional photography equipment arrangement for studio management',  style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
+  { src: '/images/photographer-taking-photos-handsome-model.webp',        alt: 'Photographer managing a client photo session',                           style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
+  { src: '/images/young-man-working-his-photography-studio.webp',         alt: 'Young photographer working in his photography studio',                   style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
+  { src: '/images/full-shot-woman-working-as-photographer.webp',          alt: 'Female photographer running her studio business',                        style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
+  { src: '/images/man-working-his-photography-studio.webp',               alt: 'Photographer managing bookings and clients in studio',                   style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
 ];
 
 const VIBGYOR = 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)';
@@ -165,11 +165,13 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
                 >
                   <img
                     src={photo.src}
-                    alt=""
+                    alt={photo.alt}
                     className="w-full h-full object-cover"
                     loading={i === 0 ? 'eager' : 'lazy'}
                     fetchPriority={i === 0 ? 'high' : 'low'}
                     decoding={i === 0 ? 'sync' : 'async'}
+                    width="900"
+                    height="675"
                   />
                 </div>
               ))}

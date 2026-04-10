@@ -33,7 +33,7 @@ export default function Analytics() {
   }, []);
 
   return (
-    <section id="analytics" ref={sectionRef} className="bg-[#FAFAF7] relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
+    <section id="analytics" aria-label="Analytics and Insights" ref={sectionRef} className="bg-[#FAFAF7] relative min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24">
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)' }} />
 
       <style>{`
