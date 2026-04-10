@@ -13,12 +13,15 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Public images — revalidate daily
+# Public images — cache for 30 days
 /*.png
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=2592000, must-revalidate
 
 /*.jpg
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/images/*
+  Cache-Control: public, max-age=2592000, must-revalidate
 
 # sitemap & robots — revalidate daily
 /sitemap.xml
