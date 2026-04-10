@@ -11,13 +11,14 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://snapflo.studio" />
 
-    <!-- Preload critical assets -->
+    <!-- Preload critical assets — fires before JS downloads -->
     <link rel="preload" href="/snapflo-side-logo.png" as="image" />
+    <link rel="preload" href="/images/arrangement-professional-photographer-equipment.webp" as="image" fetchpriority="high" />
 
     <!-- DM Sans via Google Fonts — loaded in HTML so it never blocks JS parse -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=optional" />
 
     <!-- Primary SEO -->
     <title>Snapflo | Studio Management Software for Photographers & Creators</title>

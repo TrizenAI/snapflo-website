@@ -1,19 +1,13 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-import img1 from '../assets/arrangement-professional-photographer-equipment.webp';
-import img2 from '../assets/photographer-taking-photos-handsome-model.webp';
-import img3 from '../assets/young-man-working-his-photography-studio.webp';
-import img4 from '../assets/full-shot-woman-working-as-photographer.webp';
-import img5 from '../assets/man-working-his-photography-studio.webp';
-
-// Tightly packed wall — photos overlap well at all sizes
+// Static public paths — browser can discover & preload before JS runs
 const wallPhotos = [
-  { src: img1, style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
-  { src: img2, style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
-  { src: img3, style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
-  { src: img4, style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
-  { src: img5, style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
+  { src: '/images/arrangement-professional-photographer-equipment.webp',  style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
+  { src: '/images/photographer-taking-photos-handsome-model.webp',        style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
+  { src: '/images/young-man-working-his-photography-studio.webp',         style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
+  { src: '/images/full-shot-woman-working-as-photographer.webp',          style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
+  { src: '/images/man-working-his-photography-studio.webp',               style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
 ];
 
 const VIBGYOR = 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)';
