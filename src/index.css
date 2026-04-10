@@ -4,10 +4,20 @@
 
 @layer base {
   html {
-    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'DM Sans', 'DM Sans Fallback', ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* Fallback font with adjusted metrics to match DM Sans — prevents layout shift on swap */
+@font-face {
+  font-family: 'DM Sans Fallback';
+  src: local('Arial');
+  size-adjust: 100%;
+  ascent-override: 94%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 /* Self-hosted DM Sans — no external network hop */
@@ -15,7 +25,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/dm-sans-latin-400-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -23,7 +33,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/dm-sans-latin-500-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -31,7 +41,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/dm-sans-latin-700-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
