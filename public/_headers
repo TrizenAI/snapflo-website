@@ -13,6 +13,10 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Self-hosted fonts — cache for 1 year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Public images — cache for 30 days
 /*.png
   Cache-Control: public, max-age=2592000, must-revalidate

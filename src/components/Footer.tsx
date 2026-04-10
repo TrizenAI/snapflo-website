@@ -11,7 +11,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-10 mb-4" />
+            <picture>
+              <source srcSet="/snapflo-side-logo.webp" type="image/webp" />
+              <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-10 w-auto mb-4" width="450" height="150" />
+            </picture>
             <p
               className="font-semibold text-transparent bg-clip-text mb-2 text-sm"
               style={{ backgroundImage: 'linear-gradient(to right, #8B5CF6, #3B82F6, #EF4444)' }}

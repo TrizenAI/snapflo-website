@@ -3,11 +3,11 @@ import { ArrowRight } from 'lucide-react';
 
 // Static public paths — browser can discover & preload before JS runs
 const wallPhotos = [
-  { src: '/images/arrangement-professional-photographer-equipment.webp',  alt: 'Professional photography equipment arrangement for studio management',  style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
-  { src: '/images/photographer-taking-photos-handsome-model.webp',        alt: 'Photographer managing a client photo session',                           style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
-  { src: '/images/young-man-working-his-photography-studio.webp',         alt: 'Young photographer working in his photography studio',                   style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
-  { src: '/images/full-shot-woman-working-as-photographer.webp',          alt: 'Female photographer running her studio business',                        style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
-  { src: '/images/man-working-his-photography-studio.webp',               alt: 'Photographer managing bookings and clients in studio',                   style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
+  { src: '/images/arrangement-professional-photographer-equipment.webp',  srcSet: '/images/arrangement-professional-photographer-equipment-480.webp 480w, /images/arrangement-professional-photographer-equipment.webp 900w',  alt: 'Professional photography equipment arrangement for studio management',  style: { top: '0%',    left: '0%',   width: '52%', rotate: '-2deg',   zIndex: 1 } },
+  { src: '/images/photographer-taking-photos-handsome-model.webp',        srcSet: '/images/photographer-taking-photos-handsome-model-480.webp 480w, /images/photographer-taking-photos-handsome-model.webp 900w',              alt: 'Photographer managing a client photo session',                           style: { top: '0%',    right: '0%',  width: '46%', rotate: '2.5deg',  zIndex: 2 } },
+  { src: '/images/young-man-working-his-photography-studio.webp',         srcSet: '/images/young-man-working-his-photography-studio-480.webp 480w, /images/young-man-working-his-photography-studio.webp 900w',                alt: 'Young photographer working in his photography studio',                   style: { top: '30%',   left: '8%',   width: '54%', rotate: '-1deg',   zIndex: 4 } },
+  { src: '/images/full-shot-woman-working-as-photographer.webp',          srcSet: '/images/full-shot-woman-working-as-photographer-480.webp 480w, /images/full-shot-woman-working-as-photographer.webp 900w',                  alt: 'Female photographer running her studio business',                        style: { bottom: '0%', left: '0%',   width: '45%', rotate: '2deg',    zIndex: 3 } },
+  { src: '/images/man-working-his-photography-studio.webp',               srcSet: '/images/man-working-his-photography-studio-480.webp 480w, /images/man-working-his-photography-studio.webp 900w',                          alt: 'Photographer managing bookings and clients in studio',                   style: { bottom: '0%', right: '0%',  width: '52%', rotate: '-2deg',   zIndex: 3 } },
 ];
 
 const VIBGYOR = 'linear-gradient(to right, #8B5CF6, #6366F1, #3B82F6, #22C55E, #EAB308, #F97316, #EF4444)';
@@ -46,7 +46,10 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
       <header>
       <nav className="relative z-20 container mx-auto px-4 sm:px-6 py-5">
         <div className="flex items-center justify-between">
-          <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-9 sm:h-11" fetchPriority="high" decoding="sync" />
+          <picture>
+              <source srcSet="/snapflo-side-logo.webp" type="image/webp" />
+              <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-9 sm:h-11 w-auto" fetchPriority="high" decoding="sync" width="450" height="150" />
+            </picture>
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <a href="#features" className="text-gray-500 hover:text-gray-900 transition font-medium text-sm lg:text-base">Features</a>
             <a href="#analytics" className="text-gray-500 hover:text-gray-900 transition font-medium text-sm lg:text-base">Analytics</a>
@@ -165,10 +168,12 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
                 >
                   <img
                     src={photo.src}
+                    srcSet={photo.srcSet}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 25vw"
                     alt={photo.alt}
                     className="w-full h-full object-cover"
                     loading={i === 0 ? 'eager' : 'lazy'}
-                    fetchPriority={i === 0 ? 'high' : 'low'}
+                    fetchPriority={i === 0 ? 'high' : 'auto'}
                     decoding={i === 0 ? 'sync' : 'async'}
                     width="900"
                     height="675"
