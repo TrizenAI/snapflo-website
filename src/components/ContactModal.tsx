@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { X, Loader2, CheckCircle, AlertCircle, Calendar, Phone, Mail, User, MessageSquare } from 'lucide-react';
-import axios from 'axios';
 
 // const API_BASE_URL = 'http://localhost:7200';
 const API_BASE_URL = 'https://dev.api.snapflo.studio';
@@ -65,7 +64,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
     try {
-      await axios.post(`${API_BASE_URL}/contact`, data);
+      const res = await fetch(`${API_BASE_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        const msg = body?.message;
+        throw new Error(Array.isArray(msg) ? msg[0] : msg || 'Something went wrong. Please try again.');
+      }
       setToast({
         show: true,
         type: 'success',
@@ -77,16 +85,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setToast({ show: false, type: 'success', message: '' });
       }, 3000);
     } catch (error) {
-      let message = 'Something went wrong. Please try again.';
-      if (axios.isAxiosError(error) && error.response?.data?.message) {
-        message = Array.isArray(error.response.data.message)
-          ? error.response.data.message[0]
-          : error.response.data.message;
-      }
       setToast({
         show: true,
         type: 'error',
-        message,
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
       });
       setTimeout(() => {
         setToast({ show: false, type: 'success', message: '' });

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-import img1 from '../assets/arrangement-professional-photographer-equipment.jpg';
-import img2 from '../assets/photographer-taking-photos-handsome-model.jpg';
-import img3 from '../assets/young-man-working-his-photography-studio.jpg';
-import img4 from '../assets/full-shot-woman-working-as-photographer.jpg';
-import img5 from '../assets/man-working-his-photography-studio.jpg';
+import img1 from '../assets/arrangement-professional-photographer-equipment.webp';
+import img2 from '../assets/photographer-taking-photos-handsome-model.webp';
+import img3 from '../assets/young-man-working-his-photography-studio.webp';
+import img4 from '../assets/full-shot-woman-working-as-photographer.webp';
+import img5 from '../assets/man-working-his-photography-studio.webp';
 
 // Tightly packed wall — photos overlap well at all sizes
 const wallPhotos = [
@@ -173,9 +173,9 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
                     src={photo.src}
                     alt=""
                     className="w-full h-full object-cover"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="sync"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={i === 0 ? 'high' : 'low'}
+                    decoding={i === 0 ? 'sync' : 'async'}
                   />
                 </div>
               ))}
