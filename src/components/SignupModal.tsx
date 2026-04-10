@@ -9,7 +9,7 @@ const API_BASE_URL = 'https://api.dev.snapflo.studio';
 
 const signupSchema = z
   .object({
-    name: z.string().min(1, 'Full name is required').trim().min(2, 'Name must be at least 2 characters'),
+    name: z.string().min(1, 'Full name is required').min(2, 'Name must be at least 2 characters'),
     email: z.string().min(1, 'Email address is required').email('Please enter a valid email address'),
     tenantName: z.string().min(1, 'Studio name is required'),
     domainName: z
@@ -94,7 +94,10 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         {/* Header */}
         <div className="flex-shrink-0 flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <div className="flex items-center gap-3">
-            <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-7" />
+            <picture>
+                <source srcSet="/snapflo-side-logo.webp" type="image/webp" />
+                <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-7 w-auto" width="450" height="150" />
+              </picture>
           </div>
           <button onClick={handleClose} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition">
             <X className="w-5 h-5" />
