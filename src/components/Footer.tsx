@@ -21,14 +21,14 @@ export default function Footer() {
             >
               Every frame, delivered.
             </p>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               For studio owners, freelancers, and content creators — one platform to run it all.
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="text-gray-900 font-semibold mb-4 text-sm">Product</h4>
+            <p className="text-gray-900 font-semibold mb-4 text-sm">Product</p>
             <ul className="space-y-2 text-sm">
               <li><a href="#features" className="hover:text-gray-900 transition">Features</a></li>
               <li><a href="#analytics" className="hover:text-gray-900 transition">Analytics</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-gray-900 font-semibold mb-4 text-sm">Legal</h4>
+            <p className="text-gray-900 font-semibold mb-4 text-sm">Legal</p>
             <ul className="space-y-2 text-sm">
               <li><Link to="/privacy-policy"  className="hover:text-gray-900 transition">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" className="hover:text-gray-900 transition">Terms of Service</Link></li>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-gray-900 font-semibold mb-4 text-sm">Contact</h4>
+            <p className="text-gray-900 font-semibold mb-4 text-sm">Contact</p>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-violet-500 flex-shrink-0" />
@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               © {currentYear} Snapflo by TrizenAI Technologies Private Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">

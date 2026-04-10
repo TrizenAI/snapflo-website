@@ -51,7 +51,7 @@ export default function SocialMediaSection() {
                       <CheckCircle className="w-3.5 h-3.5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-0.5">{pt.title}</h4>
+                      <p className="font-semibold text-gray-900 mb-0.5">{pt.title}</p>
                       <p className="text-gray-500 text-sm">{pt.desc}</p>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function SocialMediaSection() {
                     </div>
                     <span className="text-sm font-semibold text-gray-800">Lumière Studio</span>
                   </div>
-                  <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Draft</span>
+                  <span className="text-xs text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">Draft</span>
                 </div>
 
                 {/* Post text */}
@@ -101,7 +101,7 @@ export default function SocialMediaSection() {
 
                 {/* Platform targets */}
                 <div className="px-4 pb-3 flex items-center gap-2">
-                  <span className="text-xs text-gray-400">Posting to</span>
+                  <span className="text-xs text-gray-600">Posting to</span>
                   {[FaInstagram, FaFacebook, FaXTwitter, FaLinkedinIn, FaYoutube].map((Icon, i) => (
                     <div
                       key={i}
@@ -115,10 +115,10 @@ export default function SocialMediaSection() {
 
                 {/* Footer action */}
                 <div className="px-4 py-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-xs text-gray-400">Scheduled · Today 6:00 PM</span>
+                  <span className="text-xs text-gray-600">Scheduled · Today 6:00 PM</span>
                   <button
                     className="text-white text-xs font-semibold px-4 py-1.5 rounded-lg hover:opacity-90 transition"
-                    style={{ background: '#6366F1' }}
+                    style={{ background: '#4F46E5' }}
                   >
                     Publish Now
                   </button>
