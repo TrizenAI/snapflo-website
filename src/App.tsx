@@ -1,48 +1,50 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import SocialMediaSection from './components/SocialMediaSection';
-import Analytics from './components/Analytics';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-import SignupModal from './components/SignupModal';
-import ContactModal from './components/ContactModal';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import CookiePolicy from './pages/CookiePolicy';
-import DataDeletion from './pages/DataDeletion';
+
+const Features = lazy(() => import('./components/Features'));
+const SocialMediaSection = lazy(() => import('./components/SocialMediaSection'));
+const Analytics = lazy(() => import('./components/Analytics'));
+const CTA = lazy(() => import('./components/CTA'));
+const Footer = lazy(() => import('./components/Footer'));
+const SignupModal = lazy(() => import('./components/SignupModal'));
+const ContactModal = lazy(() => import('./components/ContactModal'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
+const DataDeletion = lazy(() => import('./pages/DataDeletion'));
 
 function HomePage() {
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const handleGetStarted = () => {
-    setIsSignupModalOpen(true);
-  };
-
-  const handleScheduleDemo = () => {
-    setIsContactModalOpen(true);
-  };
+  const handleGetStarted = () => setIsSignupModalOpen(true);
+  const handleScheduleDemo = () => setIsContactModalOpen(true);
 
   return (
     <>
       <Hero onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
       <main>
-        <Features />
-        <SocialMediaSection />
-        <Analytics />
-        <CTA onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
+        <Suspense fallback={null}>
+          <Features />
+          <SocialMediaSection />
+          <Analytics />
+          <CTA onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
+        </Suspense>
       </main>
-      <Footer />
-      <SignupModal
-        isOpen={isSignupModalOpen}
-        onClose={() => setIsSignupModalOpen(false)}
-      />
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+      {isSignupModalOpen && (
+        <Suspense fallback={null}>
+          <SignupModal isOpen onClose={() => setIsSignupModalOpen(false)} />
+        </Suspense>
+      )}
+      {isContactModalOpen && (
+        <Suspense fallback={null}>
+          <ContactModal isOpen onClose={() => setIsContactModalOpen(false)} />
+        </Suspense>
+      )}
     </>
   );
 }
@@ -52,10 +54,10 @@ function App() {
     <div className="min-h-screen bg-white">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="/data-deletion" element={<DataDeletion />} />
+        <Route path="/privacy-policy" element={<Suspense fallback={null}><PrivacyPolicy /></Suspense>} />
+        <Route path="/terms-of-service" element={<Suspense fallback={null}><TermsOfService /></Suspense>} />
+        <Route path="/cookie-policy" element={<Suspense fallback={null}><CookiePolicy /></Suspense>} />
+        <Route path="/data-deletion" element={<Suspense fallback={null}><DataDeletion /></Suspense>} />
       </Routes>
     </div>
   );

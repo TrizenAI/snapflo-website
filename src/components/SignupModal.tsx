@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { X, Loader2, CheckCircle, AlertCircle, Eye, EyeOff } from 'lucide-react';
-import axios from 'axios';
 
 const BASE_DOMAIN = 'snapflo.studio';
 const API_BASE_URL = 'https://api.dev.snapflo.studio';
@@ -55,18 +54,21 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
   const onSubmit = async (data: SignupFormData) => {
     setIsLoading(true);
     try {
-      await axios.post(`${API_BASE_URL}/auth/register`, data);
+      const res = await fetch(`${API_BASE_URL}/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        const msg = body?.message;
+        throw new Error(Array.isArray(msg) ? msg[0] : msg || 'Registration failed. Please try again.');
+      }
       setToast({ show: true, type: 'success', message: 'Account created! You can now log in to your studio.' });
       reset();
       setTimeout(() => { onClose(); setToast({ show: false, type: 'success', message: '' }); }, 3000);
     } catch (error) {
-      let message = 'Registration failed. Please try again.';
-      if (axios.isAxiosError(error) && error.response?.data?.message) {
-        message = Array.isArray(error.response.data.message)
-          ? error.response.data.message[0]
-          : error.response.data.message;
-      }
-      setToast({ show: true, type: 'error', message });
+      setToast({ show: true, type: 'error', message: error instanceof Error ? error.message : 'Registration failed. Please try again.' });
       setTimeout(() => setToast({ show: false, type: 'success', message: '' }), 5000);
     } finally {
       setIsLoading(false);
