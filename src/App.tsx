@@ -28,10 +28,12 @@ function HomePage() {
   return (
     <>
       <Hero onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
-      <Features />
-      <SocialMediaSection />
-      <Analytics />
-      <CTA onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
+      <main>
+        <Features />
+        <SocialMediaSection />
+        <Analytics />
+        <CTA onGetStarted={handleGetStarted} onScheduleDemo={handleScheduleDemo} />
+      </main>
       <Footer />
       <SignupModal
         isOpen={isSignupModalOpen}

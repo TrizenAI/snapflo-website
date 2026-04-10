@@ -49,6 +49,7 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: VIBGYOR }} />
 
       {/* Navigation */}
+      <header>
       <nav className="relative z-20 container mx-auto px-4 sm:px-6 py-5">
         <div className="flex items-center justify-between">
           <img src="/snapflo-side-logo.png" alt="Snapflo" className="h-9 sm:h-11" fetchPriority="high" decoding="sync" />
@@ -73,6 +74,7 @@ export default function Hero({ onGetStarted, onScheduleDemo }: HeroProps) {
           </button>
         </div>
       </nav>
+      </header>
 
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center container mx-auto px-4 sm:px-6 pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-12 lg:pb-24">
