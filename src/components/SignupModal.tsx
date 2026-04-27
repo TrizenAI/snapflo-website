@@ -217,6 +217,11 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
             <a href="/terms-of-service" className="text-indigo-500 hover:underline">Terms</a> &{' '}
             <a href="/privacy-policy" className="text-indigo-500 hover:underline">Privacy Policy</a>
           </p>
+
+          <p className="text-center text-sm text-gray-500 mt-3">
+            Already have an account?{' '}
+            <a href="https://demo.snapflo.studio/login" target="_blank" rel="noopener noreferrer" className="text-indigo-500 font-medium hover:underline">Sign in</a>
+          </p>
         </form>
       </div>
     </div>
